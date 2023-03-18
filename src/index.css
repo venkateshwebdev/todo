@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Preahvihear&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+/* font-family: 'Preahvihear', sans-serif; */
+}
+html{
+  scroll-behavior: smooth;
+  /* background-color: #101c2E; */
+}

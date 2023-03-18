@@ -1,0 +1,112 @@
+.entries-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+    /* background-color: white; */
+}
+.entries-nav{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    font-size: 25px;
+    color: #cccccc;
+}
+.entries-task{
+    width: 50%;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #cccccc;
+}
+.entries-boards{
+    width: 50%;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #cccccc;
+}
+.tasks .entries-task{
+    color: #1e4199;
+    border-bottom: 4px solid #cccccc;
+}
+.boards .entries-boards{
+    color: #1e4199;
+    border-bottom: 4px solid #cccccc;
+}
+.b .tasksContainer{
+    display: none;
+}
+.t .boardsConatiner{
+    display: none;
+}
+.weekDays{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: grey;
+    padding: 2.5% 0%;
+}
+.count{
+    height: 10px;
+    width: 10px;
+    background-color:black;
+    border-radius: 360px;
+}
+
+
+.taskCard-button{
+    height: 50px;
+    width: 50px;
+    background: rgba(0,0,0,0.1);
+    /* backdrop-filter: blur(10px); */
+    border-radius: 720px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.taskCard{
+    background-color:skyblue;
+    height: 150px;
+    margin:0.5% 20%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+}
+.taskCard-nav{
+    display: flex;
+    margin: 0 10%;
+    align-items: first baseline;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.taskCard-main{
+    margin: 0 10%;
+    padding-top: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    align-self:baseline;
+}
+.second{
+    background-color:yellow;
+}
+.third{
+    background-color:rgb(255, 232, 232);
+}
+.full-task-active .fullPageTask{
+    position: absolute;
+    height: 100vh;
+    top:0%;
+    left: 0%;
+    width: 100%;
+    overflow: hidden;
+}
+.full-task-active .tl{
+    display: none;
+}
+
+@media screen and (max-width:1080px) {
+    .taskCard{
+        margin: 1.2% 0;
+
+    } 
+    .weekDays{
+        padding: 5% 0%;}
+}
