@@ -1,25 +1,37 @@
 .addTask-container{
     display: flex;
     flex-direction: column;
-    height: 97vh;
-    background-color: yellow;
-    padding: 2% 5%;
+    height: 100vh;
+    padding: 0 5%;
 }
-.addTask-head{
-    padding-bottom: 50px;
+
+.blue{
+    background-color:rgb(120, 205, 239)
+}
+.yellow{
+    background-color: rgb(255, 255, 86);
+}
+.pink{
+    background-color:rgb(255, 232, 232);
 }
 .task-input{
     height: 50px;
     display: flex;
+    background-color: inherit
+}
+input{
+    background-color: inherit
 }
 .addtask-form{
     display: flex;
     flex-direction: column;
     align-self: center;
     justify-self: center;
+    background-color: inherit;
 }
 .close-icon{
     font-size: 25px;
+    
 }
 .back-button{
     height: 35px;

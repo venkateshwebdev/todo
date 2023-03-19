@@ -1,9 +1,15 @@
 .App {
   text-align: center;
   background-color: #101c2e;
+
 }
-
-
-.new-css {
-  background-color: red;
+.modal{
+  display: flex;
+  height: 100vh;
+}
+.noModal{
+  display: none;
+}
+.hide{
+  display: none;
 }

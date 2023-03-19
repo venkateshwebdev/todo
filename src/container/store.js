@@ -17,11 +17,25 @@ const taskSlice = createSlice({
       },
     })
 
+const modalSlice = createSlice({
+    name:"modal",
+    initialState:{isActive:false,target:undefined},
+    reducers:{
+        modalStatus:(state,action)=>{
+            state.isActive = action.payload
+        },
+        modalDetails:(state,action)=>{
+            state.target=action.payload
+        }
+    }
+}) 
 
 export const store = configureStore({
     reducer:{
-        [taskSlice.name]:taskSlice.reducer
+        [taskSlice.name]:taskSlice.reducer,
+        [modalSlice.name]:modalSlice.reducer
     }
 });
 
 export const {addtoList,deletefromList} = taskSlice.actions
+export const {modalStatus,modalDetails}=modalSlice.actions

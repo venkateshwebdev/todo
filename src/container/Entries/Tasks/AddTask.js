@@ -3,13 +3,19 @@ import { Link } from 'react-router-dom'
 import {GrFormClose} from "react-icons/gr"
 import { useDispatch, useSelector } from 'react-redux'
 import { addtoList } from '../../store'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 const AddTask = () => {
     const data = useSelector((state)=>state.task.data)
     const [Ttitle,setTTitle] = useState("")
     const [Tdes,setTdes] = useState("")
     const [Tdate,setTdate] = useState("")
     const [Ttime,setTtime] = useState("")
+    const [backcolor,setbackcolor] = useState();
+    useEffect(()=>{
+        const random = Math.floor(Math.random()*3)
+        const colors = ["blue","yellow","pink"]
+        setbackcolor(colors[random]) 
+    },[data])
     const dispatch = useDispatch()
     const handleFrom = (e)=>{
         e.preventDefault()
@@ -24,16 +30,13 @@ const AddTask = () => {
         console.log(createTask)
         dispatch(addtoList(createTask))
     }
-    const handleTitle = ()=>{
-        
-    }
     return ( 
-        <div className="addTask-container">
+        <div className={`addTask-container ${backcolor}`}>
             <div className="addTask-head">
-                <Link to="/"><div className='back-button'><GrFormClose className='close-icon'/></div></Link>
+                <Link to="/"><div className='back-button'><GrFormClose className='close-icon' /></div></Link>
             </div>
             <div className="addTask-main">
-                <form className='addtask-form' onSubmit={handleFrom}>
+                <form className='addtask-form'  onSubmit={handleFrom}>
                     <input onChange={(e)=>setTTitle(e.target.value)} className="task-input" type={"text"} placeholder={"Task..."} value={Ttitle} />
                     <input onChange={(e)=>setTdes(e.target.value)} className="description-input" type={"text"} placeholder={"add description...."}  value={Tdes} />
                     <input onChange={(e)=>setTdate(e.target.value)} type={"date"} placeholder={Date.now()} value={Tdate} />
