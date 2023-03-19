@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import Entries from '../Entries/Entries';
+import Navbar from '../Navbar/Navbar';
 import './home.css'
 const Home = () => {
     const [currentDate,setCurrentDate] = useState("");
@@ -27,6 +29,8 @@ const Home = () => {
     },[today])
 
     return(
+        <>
+        <Navbar />
         <div className="home-container">
             <div className='home-greet'>Good {hours}.</div>
             <div className='home-footer'>
@@ -40,6 +44,8 @@ const Home = () => {
                 </div>
             </div>
         </div>
+        <Entries />
+        </>
     )
 }
  

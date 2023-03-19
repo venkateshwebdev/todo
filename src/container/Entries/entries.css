@@ -61,6 +61,17 @@
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    cursor: pointer;
+    font-size: 22px;
+}
+.taskCard-button:hover{
+    background: rgba(0,0,0,0.2);
+}
+.d{
+    background: rgba(255,0,0,0.2);
+}
+.d:hover{
+    background: rgba(255,0,0,0.4);
 }
 .taskCard{
     background-color:skyblue;
@@ -72,7 +83,7 @@
 }
 .taskCard-nav{
     display: flex;
-    margin: 0 10%;
+    margin: 0 5%;
     align-items: first baseline;
     justify-content: flex-end;
     gap: 20px;

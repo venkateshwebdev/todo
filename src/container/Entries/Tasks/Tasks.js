@@ -1,28 +1,36 @@
 import '../entries.css'
-import taskList from '../../../taskList'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CompleteTaskPage from './CompleteTaskPage'
+import { useDispatch, useSelector } from 'react-redux'
+import { deletefromList } from '../../store'
+import {AiOutlineDelete} from "react-icons/ai"
+import {IoCheckmarkDoneSharp} from "react-icons/io5"
 const Tasks = () => {
-    const [active,setActive] = useState(false)
-    console.log(taskList)
+    const data = useSelector((state)=>state.task.data)
+    console.log("inti stat e", data);
+    const dispatch = useDispatch()
+     const [active,setActive] = useState(false)
     const createTaskCards = (e)=>{
-        const handleCardClick =(e)=>{
-          setActive(true)  
+        const handleTaskDone = (e)=>{
+            const index = e.id
+            dispatch(deletefromList(index))
         }
         return(
-            <div onClick={handleCardClick} className={`taskCard ${e.id%3==0&&"third"} ${e.id%2==0&&"second"}` }>
+            <div className={`taskCard ${e.id%3==0&&"third"} ${e.id%2==0&&"second"}` }>
                 <div className="taskCard-nav">
-                    <div className="timeremaining">1h30m</div>
-                    <div className="taskCard-button">✔️</div>
+                    <div className="createdtime">{e.cdate}</div>
+                    <div className="timeremaining">{e.ctime}</div>
+                    <div onClick={()=>{handleTaskDone(e)}} className="taskCard-button"><IoCheckmarkDoneSharp/></div>
+                    <div onClick={()=>{handleTaskDone(e)}} className="taskCard-button d"><AiOutlineDelete/></div>
                 </div>
-                <div className="taskCard-main">Walk My Dog</div>
+                <div className="taskCard-main">{e.title}</div>
             </div>
         )
     }
     return ( 
         <div className={`tasks-container ${active&&"full-task-active"}`}>
             <div className={`full-task`}><CompleteTaskPage/></div>
-            <div className='tl'>{taskList.map((e)=>(createTaskCards(e)))}</div>
+            <div className='tl'>{data?.map((e)=>(createTaskCards(e)))}</div>
             
         </div>
      );
