@@ -24,8 +24,8 @@ const Tasks = () => {
         return(
             <div onClick={()=>handleCardClick(e)} className={`taskCard ${e.id%3==0&&"third"} ${e.id%2==0&&"second"}` }>
                 <div className="taskCard-nav">
-                    <div className="createdtime">{e.cdate}</div>
-                    <div className="timeremaining">{e.ctime}</div>
+                    {/* <div className="createdtime">{e.cdate}</div> */}
+                    <div className="timeremaining">{e.ctime}m left</div>
                     <div onClick={(event)=>{handleTaskDone(event, e)}} className="taskCard-button"><IoCheckmarkDoneSharp/></div>
                     <div onClick={(event)=>{handleTaskDone(event, e)}} className="taskCard-button d"><AiOutlineDelete/></div>
                 </div>

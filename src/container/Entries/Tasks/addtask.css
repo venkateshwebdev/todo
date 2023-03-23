@@ -3,41 +3,77 @@
     flex-direction: column;
     height: 100vh;
     padding: 0 5%;
+    background-color:rgb(120, 205, 239);
+    padding-top:50px
 }
 
-.blue{
-    background-color:rgb(120, 205, 239)
-}
-.yellow{
+.second{
     background-color: rgb(255, 255, 86);
 }
-.pink{
+.third{
     background-color:rgb(255, 232, 232);
 }
 .task-input{
     height: 50px;
     display: flex;
-    background-color: inherit
+    font-size: 24px;
+    text-transform: capitalize;
 }
+.add-task-button{
+    height: 55px;
+    width: 300px;
+    background-color: #252525;
+    color: skyblue;
+    font-weight: 900;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+.second .add-task-button{
+    color: yellow;
+}
+.third .add-task-button{
+    color:pink
+}
+.add-task-button:hover{
+    background-color: transparent;
+    border: 4px solid #252525;
+    color:#252525
+}
+
 input{
-    background-color: inherit
+    background-color: inherit;
+    border:none;
+    outline: none;
+    border-bottom: 3px solid black;
+    padding: 10px;
+}
+input::placeholder{
+    color: #565656;
 }
 .addtask-form{
     display: flex;
     flex-direction: column;
-    align-self: center;
-    justify-self: center;
+    align-items: left;
     background-color: inherit;
+    gap: 50px;
+    padding-top: 50px;
 }
 .close-icon{
     font-size: 25px;
+    filter: invert(0.8);
     
 }
 .back-button{
     height: 35px;
     width: 35px;
     border-radius: 360px;
-    background: rgba(0,0,0,0.2);
+    background-color: #252525;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Entries from '../Entries/Entries';
 import Navbar from '../Navbar/Navbar';
 import './home.css'
+import { updateTime } from '../store';
 const Home = () => {
+    const dispatch = useDispatch()
     const [currentDate,setCurrentDate] = useState("");
     const [day,setDay] = useState("")
     const [hours,setHours] = useState("")
@@ -11,11 +14,12 @@ const Home = () => {
     useEffect(()=>{
         const hh = today.getHours()
         const dd = today.getDay()
+        const dt = today.getDate()
         const mm = today.toLocaleString('default', { month: 'short' })
         const yy = today.getFullYear();
-        console.log(dd)
-        console.log(hh)
-        setCurrentDate(`${mm} ${dd} , ${yy}`)
+        const full = `${mm} ${dt} , ${yy}`
+        setCurrentDate(full)
+        dispatch(updateTime(full))
         setDay(dd)
         if (hh>0 && hh<12){
             setHours("Morning")

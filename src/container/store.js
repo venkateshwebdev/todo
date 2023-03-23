@@ -29,13 +29,24 @@ const modalSlice = createSlice({
         }
     }
 }) 
+const dateSlice = createSlice({
+    name:"date",
+    initialState:{currentDate:""},
+    reducers:{
+        updateTime:(state,action)=>{
+            state.currentDate = action.payload
+        }
+    }
+})
 
 export const store = configureStore({
     reducer:{
         [taskSlice.name]:taskSlice.reducer,
-        [modalSlice.name]:modalSlice.reducer
+        [modalSlice.name]:modalSlice.reducer,
+        [dateSlice.name]:dateSlice.reducer,
     }
 });
 
 export const {addtoList,deletefromList} = taskSlice.actions
 export const {modalStatus,modalDetails}=modalSlice.actions
+export const {updateTime} = dateSlice.actions
